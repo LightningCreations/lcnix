@@ -37,7 +37,7 @@ enum class Capability : uint8_t{
 	CAP_SETFCAP,
 	CAP_SETPCAP,
 	CAP_SETUID,
-	CAP_SYS_ADMIN, // Note, this should be deprecated
+	// CAP_SYS_ADMIN, The constant will be defined in userspace as a bitmask of CAP_FS_MOUNT..CAP_SYSCALL_OBSCURE
 	CAP_SYS_BOOT,
 	CAP_SYS_CHROOT,
 	CAP_SYS_MODULE,
@@ -50,20 +50,61 @@ enum class Capability : uint8_t{
 	CAP_SYS_TTY_CONFIG,
 	CAP_SYSLOG,
 	CAP_WAKE_ALARM,
+	// Below here are the various capabilities that CAP_SYS_ADMIN are split into
+	// For backwards compatability CAP_SYS_ADMIN implies all of the following
 
+	///
+	/// Mount Filesystems or Control Mounts
+    CAP_FSMOUNT,
+    /// Control System Quotas
+    CAP_QUOATA,
+    /// Perform Arbitrary IPC Operations otherwise prohibited
+    CAP_ADMIN_IPC,
+    ///
+    /// Manipulate system variables dealing with Security,
+    /// Including security and trusted extended attributes
+    CAP_SYS_SEC,
+    ///
+    /// Bypass certain system limits
+    CAP_SYS_LIMIT,
+
+    ///
+    /// Control namespaces.
+    /// setns requires either CAP_SYS_ADMIN or CAP_NS_ADMIN in the target namespace
+    CAP_NS_ADMIN,
+    ///
+    /// Various Privileged io calls
+    CAP_IO_ADMIN,
+    ///
+    /// Networking Privileges previously implied by CAP_SYS_ADMIN
+    CAP_SYS_NET,
+
+    ///
+    /// Arbitrary seccomp access, including via ptrace
+    CAP_SECCOMP,
+
+    /// Administrative Access to device drivers
+    CAP_DRV_ADMIN,
+
+    // Anything not explicitly denoted to any of the above Capabilities as a privilege delagated from CAP_SYS_ADMIN
+    // Falls here. If a File for lcnix absolutely needs any of these obscure system calls,
+    // It is recommended to use CAP_SYSCALL_OBSECURE, rather than CAP_SYS_ADMIN, as this capability will not imply any of the above
+    CAP_SYSCALL_OBSECURE
 };
 
 
 
 struct CapabilitySet{
+    constexpr CapabilitySet(unsigned __int128 caps) : caps{caps}{}
+
 private:
 	unsigned __int128 caps;
-	constexpr CapabilitySet(unsigned __int128 caps) : caps{caps}{}
-	constexpr static unsigned __int128 as_bit(Capability cap)noexcept{
+
+    constexpr static unsigned __int128 as_bit(Capability cap)noexcept{
 		return static_cast<unsigned __int128>(1)<<static_cast<unsigned>(cap);
 	}
 public:
-	constexpr CapabilitySet()noexcept = default;
+	CapabilitySet()noexcept = default;
 	constexpr explicit CapabilitySet(Capability cap)noexcept :
 		caps{as_bit(cap)}{}
 

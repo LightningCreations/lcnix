@@ -9,4 +9,4 @@ set(CMAKE_CXX_FLAGS "-ffreestanding -fno-rtti -fno-exceptions")
 set(CMAKE_C_FLAGS "-ffreestanding")
 
 
-add_library(lcnix STATIC dummy.cpp)
+add_library(lcnix STATIC dummy.cpp common/main.cpp ../include/kernel/proc/credentials.hpp)
