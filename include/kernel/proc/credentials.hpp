@@ -53,6 +53,15 @@ enum class Capability : uint8_t{
 	// Below here are the various capabilities that CAP_SYS_ADMIN are split into
 	// For backwards compatability CAP_SYS_ADMIN implies all of the following
 
+	CAP_LCNIX_RES0,
+	CAP_LCNIX_RES1,
+	CAP_LCNIX_RES2,
+	CAP_LCNIX_RES3,
+	CAP_LCNIX_RES4,
+	CAP_LCNIX_RES5,
+	CAP_LCNIX_RES6,
+	CAP_LCNIX_RES7,
+
 	///
 	/// Mount Filesystems or Control Mounts
     CAP_FSMOUNT,
@@ -86,10 +95,10 @@ enum class Capability : uint8_t{
     /// Administrative Access to device drivers
     CAP_DRV_ADMIN,
 
-    // Anything not explicitly denoted to any of the above Capabilities as a privilege delagated from CAP_SYS_ADMIN
-    // Falls here. If a File for lcnix absolutely needs any of these obscure system calls,
-    // It is recommended to use CAP_SYSCALL_OBSECURE, rather than CAP_SYS_ADMIN, as this capability will not imply any of the above
-    CAP_SYSCALL_OBSECURE
+    /// Anything not explicitly denoted to any of the above Capabilities as a privilege delagated from CAP_SYS_ADMIN
+    /// Falls here. If a File for lcnix absolutely needs any of these obscure system calls,
+    /// It is recommended to use CAP_SYSCALL_OBSCURE, rather than CAP_SYS_ADMIN, as this capability will not imply any of the above
+    CAP_SYSCALL_OBSCURE
 };
 
 
@@ -150,7 +159,7 @@ constexpr CapabilitySet all_capabilities{~static_cast<unsigned __int128>(0)};
 constexpr CapabilitySet no_capabilities{};
 
 
-// Nothing like a named value type to keep our kernel code safe
+// Nothing like a named value type to keep our kernel code typesafe
 struct Uid{
 	uid_t uid;
 	constexpr bool is_root()noexcept{
