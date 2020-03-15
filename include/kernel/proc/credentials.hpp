@@ -12,58 +12,22 @@
 #include <types.h>
 
 enum class Capability : uint8_t{
-	CAP_AUDIT_CONTROL,
-	CAP_AUDIT_READ,
-	CAP_AUDIT_WRITE,
-	CAP_BLOCK_SUSPEND,
-	CAP_CHOWN,
-	CAP_DAC_OVERRIDE,
-	CAP_DAC_READ_SEARCH,
-	CAP_FOWNER,
-	CAP_FSETID,
-	CAP_IPC_LOCK,
-	CAP_IPC_OWNER,
-	CAP_KILL,
-	CAP_LEASE,
-	CAP_LINUX_IMMUTABLE,
-	CAP_MAC_ADMIN,
-	CAP_MAC_OVERRIDE,
-	CAP_MKNOD,
-	CAP_NET_ADMIN,
-	CAP_NET_BIND_SERVICE,
-	CAP_NET_BROADCAST,
-	CAP_NET_RAW,
-	CAP_SETGID,
-	CAP_SETFCAP,
-	CAP_SETPCAP,
-	CAP_SETUID,
-	CAP_SYS_ADMIN, // Note, this should be deprecated
-	CAP_SYS_BOOT,
-	CAP_SYS_CHROOT,
-	CAP_SYS_MODULE,
-	CAP_SYS_NICE,
-	CAP_SYS_PACCT,
-	CAP_SYS_PTRACE,
-	CAP_SYS_RAWIO,
-	CAP_SYS_RESOURCE,
-	CAP_SYS_TIME,
-	CAP_SYS_TTY_CONFIG,
-	CAP_SYSLOG,
-	CAP_WAKE_ALARM,
-
+#include "caps.inc"
 };
 
 
 
 struct CapabilitySet{
+    constexpr CapabilitySet(unsigned __int128 caps) : caps{caps}{}
+
 private:
 	unsigned __int128 caps;
-	constexpr CapabilitySet(unsigned __int128 caps) : caps{caps}{}
-	constexpr static unsigned __int128 as_bit(Capability cap)noexcept{
+
+    constexpr static unsigned __int128 as_bit(Capability cap)noexcept{
 		return static_cast<unsigned __int128>(1)<<static_cast<unsigned>(cap);
 	}
 public:
-	constexpr CapabilitySet()noexcept = default;
+	CapabilitySet()noexcept = default;
 	constexpr explicit CapabilitySet(Capability cap)noexcept :
 		caps{as_bit(cap)}{}
 
@@ -109,7 +73,7 @@ constexpr CapabilitySet all_capabilities{~static_cast<unsigned __int128>(0)};
 constexpr CapabilitySet no_capabilities{};
 
 
-// Nothing like a named value type to keep our kernel code safe
+// Nothing like a named value type to keep our kernel code typesafe
 struct Uid{
 	uid_t uid;
 	constexpr bool is_root()noexcept{
