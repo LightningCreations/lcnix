@@ -2,6 +2,11 @@
 #include <stdint.h>
 
 int __finite(double arg) {
-    if(((((uint64_t) arg) & 0x7FFC000000000000) >> 52) == 0x3FFF) return 0;
+    union {
+        double d;
+        uint64_t i;
+    } u;
+    u.d = arg;
+    if(((u.i & 0x7FF0000000000000) >> 52) == 0x7FF) return 0;
     return 1;
 }
