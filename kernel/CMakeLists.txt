@@ -10,4 +10,4 @@ set(CMAKE_C_FLAGS "-ffreestanding")
 
 add_subdirectory(arch)
 
-add_library(lcnix STATIC dummy.cpp common/main.cpp ../include/kernel/proc/credentials.hpp ../include/kernel/common/macros.h arch)
+add_library(lcnix STATIC dummy.cpp common/main.cpp ../include/kernel/proc/credentials.hpp ../include/kernel/common/macros.h arch/${LCNIX_TARGET_ARCH})
