@@ -11,4 +11,4 @@ set(CMAKE_C_FLAGS "-ffreestanding")
 add_subdirectory(arch)
 include_directories(common)
 
-add_library(lcnix STATIC common/allocator.h common/main.cpp ../include/kernel/proc/credentials.hpp ../include/kernel/common/macros.h arch/${LCNIX_TARGET_ARCH} common/list.h)
+add_library(lcnix STATIC common/allocator.h common/main.cpp common/elf/loadelf.c ../include/kernel/proc/credentials.hpp ../include/kernel/common/macros.h arch/${LCNIX_TARGET_ARCH} common/list.h)
