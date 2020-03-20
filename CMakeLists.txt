@@ -19,7 +19,7 @@ if(NOT LCNIX_BOOTSTRAP_BUILD)
 include(ExternalProject)
 ExternalProject_Add(systemd
     SOURCE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/systemd
-    CONFIGURE_COMMAND cd ${CMAKE_CURRENT_SOURCE_DIR}/systemd && ${CMAKE_CURRENT_SOURCE_DIR}/systemd/configure --prefix=${CMAKE_CURRENT_BINARY_DIR}/systemd
+    CONFIGURE_COMMAND cd ${CMAKE_CURRENT_SOURCE_DIR}/systemd && ${CMAKE_CURRENT_SOURCE_DIR}/systemd/configure
     BUILD_COMMAND make -C ${CMAKE_CURRENT_SOURCE_DIR}/systemd
 )
 endif(NOT LCNIX_BOOTSTRAP_BUILD)
