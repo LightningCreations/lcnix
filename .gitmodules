@@ -1,3 +1,6 @@
 [submodule "systemd"]
 	path = systemd
 	url = https://github.com/systemd/systemd
+[submodule "lccc"]
+	path = lccc
+	url = https://github.com/LightningCreations/lccc.git
