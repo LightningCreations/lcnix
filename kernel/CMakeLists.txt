@@ -1,5 +1,6 @@
 
-enable_language(C)
+
+project(lcnix-kernel C Rust)
 
 
 
@@ -9,6 +10,11 @@ set(CMAKE_CXX_FLAGS "-ffreestanding -fno-rtti -fno-exceptions")
 set(CMAKE_C_FLAGS "-ffreestanding")
 
 add_subdirectory(arch)
-include_directories(common)
+add_subdirectory(common)
 
-add_library(lcnix STATIC common/allocator.h common/main.cpp common/elf/loadelf.c ../include/kernel/proc/credentials.hpp ../include/kernel/common/macros.h arch/${LCNIX_TARGET_ARCH} common/list.h)
+add_executable(lcnix-kernel dummy.cpp)
+set_target_properties(lcnix-kernel PROPERTIES LINK_DEPENDS "${CMAKE_CURRENT_SOURCE_DIR}/ld/${LCNIX_TARGET_ARCH}-lcnix-kernel.ld;${CMAKE_CURRENT_SOURCE_DIR}/ld/generic-lcnix-kernel.ld")
+target_link_libraries(lcnix-kernel lcnix_kernel_common lcnix-kernel-arch-${LCNIX_TARGET_ARCH})
+
+target_link_options(lcnix-kernel PRIVATE -nostdlib -nodefaultlibs -static -r -T${CMAKE_CURRENT_SOURCE_DIR}/ld/${LCNIX_TARGET_ARCH}-lcnix-kernel.ld)
+

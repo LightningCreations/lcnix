@@ -1,5 +1,7 @@
-project(lcnix CXX)
 cmake_minimum_required(VERSION 3.15)
+project(lcnix CXX)
+
+set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_CURRENT_SOURCE_DIR}/lccc/cmake")
 
 # If we have lccc, use it.
 # If someone knows what they are doing on clang or gcc, then can -DLCNIX_OVERRIDE_COMPILERS
@@ -43,20 +45,10 @@ endif()
 if(NOT DEFINED LCNIX_BUILD_LCCC)
     set(LCNIX_BUILD_LCCC "ON")
 endif()
-if(NOT DEFINED LCNIX_BUILD_LCIR)
-    set(LCNIX_BUILD_LCIR ON)
-endif()
 if(NOT DEFINED LCNIX_BUILD_KERNEL AND NOT LCNIX_GNU_BUILD)
     set(LCNIX_BUILD_KERNEL ON)
 endif()
 
-if(LCNIX_BUILD_LCIR)
-    message("-- Building LCIR Code generation libraries")
-    if(NOT DEFINED LCNIX_LCCC_GENERATOR)
-        set(LCNIX_LCCC_GENERATOR lcir)
-    endif()
-    add_subdirectory(lcir)
-endif()
 if(LCNIX_BUILD_LCCC)
     message("-- Building LCCC Compiler")
     add_subdirectory(lccc)

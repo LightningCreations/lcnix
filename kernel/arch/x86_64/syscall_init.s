@@ -2,7 +2,9 @@
 .text
 
 .syscall_handler:
-    call __syscall
+    lea __syscall,%r8
+    lea 4(%r8,%rax),%r8
+    call *%r8
     sysret
 
 

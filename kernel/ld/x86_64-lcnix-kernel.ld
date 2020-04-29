@@ -1,0 +1,1 @@
+INCLUDE(generic-lcnix-kernel.ld)

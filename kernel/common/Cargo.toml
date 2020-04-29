@@ -8,6 +8,12 @@ edition = "2018"
 
 [lib]
 crate-type = ["staticlib"]
-name = "lcnix-kernel-common"
+name = "lcnix_kernel_common"
 
 [dependencies]
+
+[profile.dev]
+panic = "abort"
+
+[profile.release]
+panic = "abort"

@@ -4,3 +4,6 @@
 [submodule "lccc"]
 	path = lccc
 	url = https://github.com/LightningCreations/lccc.git
+[submodule "CMake"]
+	path = CMake
+	url = https://github.com/LightningCreations/CMake.git
