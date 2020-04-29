@@ -1,1 +1,1 @@
-INCLUDE(generic-lcnix-kernel.ld)
+INCLUDE generic-lcnix-kernel.ld

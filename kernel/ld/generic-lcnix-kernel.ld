@@ -16,10 +16,10 @@ SECTIONS {
     .data{
         *(.data);
     }
-    section .data.init{
+    .data.init{
         KEEP(*(.data.init));
     }
-    section .bss{
+    .bss{
         *(.bss)
         *(COMMON)
     }
