@@ -20,3 +20,4 @@ pub mod proc;
 pub mod syscall;
 pub mod file;
 pub mod ptr;
+pub mod errno;

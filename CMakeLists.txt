@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.15)
 project(lcnix CXX)
 
-set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_CURRENT_SOURCE_DIR}/lccc/cmake")
+set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_CURRENT_SOURCE_DIR}/cmake-modules" "${CMAKE_CURRENT_SOURCE_DIR}/lccc/cmake")
 
 # If we have lccc, use it.
 # If someone knows what they are doing on clang or gcc, then can -DLCNIX_OVERRIDE_COMPILERS
@@ -41,10 +41,10 @@ if(LCNIX_BOOTSTRAP_BUILD)
     add_subdirectory(stage1)
 endif()
 
-if(NOT DEFINED LCNIX_BUILD_LCCC)
+if(NOT DEFINED LCNIX_BUILD_LCCC AND NOT LCNIX_CUSTOM_BUILD)
     set(LCNIX_BUILD_LCCC "ON")
 endif()
-if(NOT DEFINED LCNIX_BUILD_KERNEL AND NOT LCNIX_GNU_BUILD)
+if(NOT DEFINED LCNIX_BUILD_KERNEL AND NOT LCNIX_GNU_BUILD AND NOT LCNIX_CUSTOM_BUILD)
     set(LCNIX_BUILD_KERNEL ON)
 endif()
 
@@ -71,6 +71,7 @@ if(LCNIX_BUILD_LIBC)
     message("-- Building libc and low-level libraries")
     # Enable LSB required low-level libraries, including libc
     add_subdirectory(libm)
+    add_subdirectory(libc)
 endif()
 
 if(LCNIX_BUILD_SYSTEMD)
