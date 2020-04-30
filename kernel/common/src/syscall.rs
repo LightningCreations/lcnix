@@ -15,6 +15,7 @@ macro_rules! static_slice {
 }
 
 static_slice!{
+    #[link_section = ".syscall"]
     #[no_mangle]
     pub static __syscall: [SyscallDecl] = [SyscallDecl(sys_read as *const ())];
 }

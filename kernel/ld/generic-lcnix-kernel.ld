@@ -9,6 +9,10 @@ SECTIONS {
         KEEP(*(.text.init));
         __text_init_end = .;
     }
+    .syscall ALIGN(1024):{
+        KEEP(*(.syscall));
+        __syscall_end = .;
+    }
     .rodata ALIGN(1024):{
         *(.rodata);
     }
