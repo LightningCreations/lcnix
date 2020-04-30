@@ -8,6 +8,8 @@
     sysret
 
 
+.globl init_syscall_handle
+
 init_syscall_handle:
     lea .syscall_handler,%rax
     mov %rax,%rdx
