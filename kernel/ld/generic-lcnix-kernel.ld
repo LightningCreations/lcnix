@@ -1,25 +1,31 @@
+ENTRY(start_kernel)
 
 SECTIONS {
-    ENTRY(start_kernel):
-    .text{
+    .text ALIGN(1024):{
         *(.text);
     }
-    .text.init{
+    .text.init ALIGN(1024):{
+        __text_init_start = .;
         KEEP(*(.text.init));
+        __text_init_end = .;
     }
-    .rodata{
+    .rodata ALIGN(1024):{
         *(.rodata);
     }
-    .rodata.init{
+    .rodata.init ALIGN(1024):{
+        __rodata_init_start = .;
         KEEP(*(.rodata.init));
+        __rodata_init_end = .;
     }
-    .data{
+    .data ALIGN(1024):{
         *(.data);
     }
-    .data.init{
+    .data.init ALIGN(1024):{
+        __data_init_start = .;
         KEEP(*(.data.init));
+        __data_init_end = .;
     }
-    .bss{
+    .bss ALIGN(1024):{
         *(.bss)
         *(COMMON)
     }

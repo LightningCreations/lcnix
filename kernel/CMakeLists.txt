@@ -14,7 +14,7 @@ add_subdirectory(common)
 
 add_executable(lcnix-kernel dummy.cpp)
 set_target_properties(lcnix-kernel PROPERTIES LINK_DEPENDS "${CMAKE_CURRENT_SOURCE_DIR}/ld/${LCNIX_TARGET_ARCH}-lcnix-kernel.ld;${CMAKE_CURRENT_SOURCE_DIR}/ld/generic-lcnix-kernel.ld")
-target_link_libraries(lcnix-kernel lcnix_kernel_common lcnix-kernel-arch-${LCNIX_TARGET_ARCH})
+target_link_libraries(lcnix-kernel -Wl,--start-group lcnix_kernel_common lcnix-kernel-arch-${LCNIX_TARGET_ARCH} -Wl,--end-group)
 
-target_link_options(lcnix-kernel PRIVATE -nostdlib -nodefaultlibs -static -T ${CMAKE_CURRENT_SOURCE_DIR}/ld/${LCNIX_TARGET_ARCH}-lcnix-kernel.ld)
+target_link_options(lcnix-kernel PRIVATE -nostdlib -Wl,-Map=lcnix-kernel.map -nodefaultlibs -static -L${CMAKE_CURRENT_SOURCE_DIR}/ld  -Wl,-T -Wl,${CMAKE_CURRENT_SOURCE_DIR}/ld/${LCNIX_TARGET_ARCH}-lcnix-kernel.ld)
 
