@@ -17,6 +17,10 @@ enumset_derive = { version = "0.5.0", path = "../enumset/enumset_derive" }
 
 [profile.dev]
 panic = "abort"
+lto = true
+opt-level = 1
 
 [profile.release]
 panic = "abort"
+lto = true
+opt-level = 3

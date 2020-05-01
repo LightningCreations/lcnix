@@ -35,3 +35,10 @@ write16:
 write32:
     mov %esi,%eax
     outl %eax,%dx
+    ret
+
+.global kwrite
+kwrite:
+    mov %rsi,%rcx
+    mov %rdi,%rsi
+    ret

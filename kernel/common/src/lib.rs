@@ -1,7 +1,9 @@
 #![no_std]
-#![no_main]
+
+use core::fmt::Write;
 
 use core::ffi::c_void;
+use crate::sys::disp::PrintkFormatter;
 
 extern"C"{
     #[no_mangle]
@@ -14,6 +16,7 @@ extern"C"{
 #[no_mangle]
 pub unsafe extern"C" fn start_kernel(mb_struct: *const c_void) -> !{
     init_syscall_handle();
+    writeln!(&mut PrintkFormatter,"Test");
     halt()
 }
 

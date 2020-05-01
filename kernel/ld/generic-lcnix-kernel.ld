@@ -1,7 +1,7 @@
 ENTRY(_start)
 
 SECTIONS {
-    .mb (NOLOAD):{
+    .mb ALIGN(1024):{
         LONG(0x1BADB002);
         LONG(3);
         LONG(-(0x1BADB002+3));

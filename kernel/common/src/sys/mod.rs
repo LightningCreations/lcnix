@@ -25,3 +25,5 @@ extern"C"{
     #[no_mangle]
     pub fn write32(port: u16,val: u32);
 }
+
+pub mod disp;
