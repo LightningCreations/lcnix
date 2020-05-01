@@ -12,7 +12,7 @@ syscall:
     mov 8(%rsp),%r9
     syscall
     mov %rax,%rdi
-    jnz .seterrno
+    js .seterrno
     ret
     .seterrno:
     call __errno_get_tls

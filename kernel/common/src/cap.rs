@@ -1,0 +1,65 @@
+
+use enumset::EnumSetType;
+
+#[derive(EnumSetType)]
+pub enum Capability{
+    AuditControl,
+    AuditRead,
+    AuditWrite,
+    BlockSuspend,
+    Chown,
+    DacOverride,
+    DacReadSearch,
+    FOwner,
+    FSetId,
+    IPCLock,
+    IPCOwner,
+    Kill,
+    Lease,
+    LinuxImmutable,
+    MacAdmin,
+    MacOverride,
+    MkNod,
+    NetAdmin,
+    NetBindService,
+    NetBroadcast,
+    NetRaw,
+    SetGid,
+    SetFCap,
+    SetPCap,
+    SetUid,
+    SysAdmin,
+    SysBoot,
+    SysChroot,
+    SysModule,
+    SysNice,
+    SysPAcct,
+    SysPTrace,
+    SysRawIO,
+    SysResource,
+    SysTime,
+    SysTTYConfig,
+    SysLog,
+    WakeAlarm,
+    // Reserved bits for LCNIX
+    LcnixReserved0 = 64,
+    LcnixReserved1,
+    LcnixReserved2,
+    LcnixReserved3,
+    LcnixReserved4,
+    LcnixReserved5,
+    LcnixReserved6,
+    LcnixReserved7,
+    LcnixReserved8,
+    LcnixReserved9,
+    LcnixReservedA,
+    LcnixReservedB,
+    LcnixReservedC,
+    LcnixReservedD,
+    LcnixReservedE,
+    LcnixReservedF
+}
+
+#[allow(non_camel_case_types)]
+pub type cap_t = <Capability as enumset::__internal::EnumSetTypePrivate>::Repr;
+

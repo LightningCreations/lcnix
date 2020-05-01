@@ -7,3 +7,6 @@
 [submodule "CMake"]
 	path = CMake
 	url = https://github.com/LightningCreations/CMake.git
+[submodule "kernel/enumset"]
+	path = kernel/enumset
+	url = https://github.com/LightningCreations/enumset.git

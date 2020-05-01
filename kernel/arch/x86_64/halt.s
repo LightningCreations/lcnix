@@ -1,0 +1,5 @@
+
+.global halt
+
+halt:
+    hlt

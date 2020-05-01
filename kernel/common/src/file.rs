@@ -1,7 +1,10 @@
 
+use crate::sys::types::fd_t;
 
 #[repr(transparent)]
-pub struct Fd(u32);
+pub struct Fd(fd_t);
+
+
 
 pub mod syscall {
     use crate::file::Fd;

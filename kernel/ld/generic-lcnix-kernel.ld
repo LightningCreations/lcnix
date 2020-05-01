@@ -1,6 +1,11 @@
-ENTRY(start_kernel)
+ENTRY(_start)
 
 SECTIONS {
+    .mb (NOLOAD):{
+        LONG(0x1BADB002);
+        LONG(3);
+        LONG(-(0x1BADB002+3));
+    }
     .text ALIGN(1024):{
         *(.text);
     }
@@ -30,7 +35,9 @@ SECTIONS {
         __data_init_end = .;
     }
     .bss ALIGN(1024):{
+        __bss_start = .;
         *(.bss)
         *(COMMON)
+        __bss_end = .;
     }
 }

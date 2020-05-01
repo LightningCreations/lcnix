@@ -1,8 +1,11 @@
 
 enable_language(C)
 
+include_directories(include)
+
 add_subdirectory(arch/${LCNIX_TARGET_ARCH})
 add_subdirectory(common)
+
 
 add_library(c-static STATIC $<TARGET_OBJECTS:c-arch-${LCNIX_TARGET_ARCH}> $<TARGET_OBJECTS:c-common>)
 add_library(c-shared SHARED $<TARGET_OBJECTS:c-arch-${LCNIX_TARGET_ARCH}> $<TARGET_OBJECTS:c-common>)

@@ -3,6 +3,7 @@
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/CMake" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/kernel/enumset" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/lccc" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/lccc/codegen-llvm/llvm-project" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/lccc/java/lcjrt" vcs="Git" />
