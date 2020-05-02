@@ -33,11 +33,7 @@ if(LCNIX_BOOTSTRAP_BUILD)
         set(LCNIX_BOOTSTRAP_ROOT "/mnt/lcnix")
     endif()
     detect_lccc(CODEGEN LCNIX_LCCC_GENERATOR)
-    set(CMAKE_INSTALL_PREFIX "${LCNIX_BOOTSTRAP_ROOT}/lcnix-stage1")
-    set(_LCNIX_BOOTSTRAP_SOURCES_ROOT "${LCNIX_BOOTSTRAP_ROOT}/lcnix-sources")
     set(LCNIX_GNU_BUILD "ON")
-    set(_LCNIX_STAGE1_CHROOT "${CMAKE_CURRENT_SOURCE_DIR}/scripts/as-root.sh chroot ${LCNIX_BOOTSTRAP_ROOT}")
-    set(_LCNIX_CMAKE_STAGE2_DEFINES "-D_LCNIX_BOOTSTRAP_STAGE2=ON -DLCNIX_BUILD_LIBC=ON -DLCNIX_BUILD_SYSTEMD=ON")
     add_subdirectory(stage1)
 endif()
 
@@ -75,15 +71,14 @@ if(LCNIX_BUILD_LIBC)
 endif()
 
 if(LCNIX_BUILD_SYSTEMD)
-    if(NOT _LCNIX_BOOTSTRAP_STAGE2)
-        message(WARNING "Building Systemd outside of bootstrap is not supported")
-    endif()
     message("-- Building systemd")
     include(ExternalProject)
     ExternalProject_Add(systemd
         SOURCE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/systemd
-        CONFIGURE_COMMAND cd ${CMAKE_CURRENT_SOURCE_DIR}/systemd && ${CMAKE_CURRENT_SOURCE_DIR}/systemd/configure
-        BUILD_COMMAND make -C ${CMAKE_CURRENT_SOURCE_DIR}/systemd
+        BINARY_DIR ${CMAKE_CURRENT_BINARY_DIR}/systemd
+        CONFIGURE_COMMAND ${CMAKE_CURRENT_SOURCE_DIR}/systemd/configure --prefix=${CMAKE_INSTALL_PREFIX} ${CMAKE_CURRENT_SOURCE_DIR}/systemd # Rdr can you wire this properly
+        BUILD_COMMAND make
+        INSTALL_COMMAND make install
     )
 endif()
 

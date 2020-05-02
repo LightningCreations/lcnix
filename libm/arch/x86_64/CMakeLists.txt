@@ -1,3 +1,3 @@
 enable_language(ASM)
 
-add_library(m-helper-x86_64 STATIC __finiteld.S)
+add_library(m-arch-x86_64 OBJECT __finiteld.S)
