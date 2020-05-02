@@ -18,3 +18,7 @@ target_link_libraries(lcnix-kernel -Wl,--start-group lcnix_kernel_common lcnix-k
 
 target_link_options(lcnix-kernel PRIVATE -nostdlib -Wl,-Map=lcnix-kernel.map -nodefaultlibs -static -L${CMAKE_CURRENT_SOURCE_DIR}/ld  -Wl,-T -Wl,${CMAKE_CURRENT_SOURCE_DIR}/ld/${LCNIX_TARGET_ARCH}-lcnix-kernel.ld)
 
+set_target_properties(lcnix-kernel PROPERTIES SUFFIX "-1.0")
+INSTALL(TARGETS lcnix-kernel DESTINATION boot)
+
+

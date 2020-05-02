@@ -28,11 +28,10 @@ if(LCNIX_BOOTSTRAP_BUILD AND LCNIX_GNU_BUILD)
 endif()
 
 if(LCNIX_BOOTSTRAP_BUILD)
-    message("-- Bootstrapping lcnix from scratch")
+    message(STATUS "Bootstrapping lcnix from scratch")
     if(NOT DEFINED LCNIX_BOOTSTRAP_ROOT)
         set(LCNIX_BOOTSTRAP_ROOT "/mnt/lcnix")
     endif()
-    detect_lccc(CODEGEN LCNIX_LCCC_GENERATOR)
     set(LCNIX_GNU_BUILD "ON")
     add_subdirectory(stage1)
 endif()
@@ -40,21 +39,26 @@ endif()
 if(NOT DEFINED LCNIX_BUILD_LCCC AND NOT LCNIX_CUSTOM_BUILD)
     set(LCNIX_BUILD_LCCC "ON")
 endif()
+if(NOT DEFINED LCNIX_BUILD_CMAKE AND NOT LCNIX_CUSTOM_BUILD)
+    set(LCNIX_BUILD_CMAKE "ON")
+endif()
 if(NOT DEFINED LCNIX_BUILD_KERNEL AND NOT LCNIX_GNU_BUILD AND NOT LCNIX_CUSTOM_BUILD)
     set(LCNIX_BUILD_KERNEL ON)
 endif()
+if(NOT DEFINED LCNIX_BUILD_COREUTILS AND NOT LCNIX_CUSTOM_BUILD AND NOT LCNIX_BOOTSTRAP_BUILD)
+    set(LCNIX_BUILD_COREUTILS ON)
+endif()
 
 if(LCNIX_BUILD_LCCC)
-    message("-- Building LCCC Compiler")
+    message(STATUS "Building LCCC Compiler")
     add_subdirectory(lccc)
 endif()
 
-
 if(LCNIX_BUILD_KERNEL)
     if(LCNIX_GNU_BUILD)
-        message(WARNING "-- Building lcnix kernel on GNU/Linux is not supported")
+        message(WARNING "Building lcnix kernel on GNU/Linux is not supported")
     endif()
-    message("-- Building lcnix kernel")
+    message(STATUS "Building lcnix kernel")
     set(LCNIX_LCCC_KERNEL_HEADERS ON)
     add_subdirectory(kernel)
     include_directories(include)
@@ -62,16 +66,29 @@ endif()
 
 if(LCNIX_BUILD_LIBC)
     if(LCNIX_GNU_BUILD)
-        message(WARNING "-- Building libc on GNU/Linux is not supported")
+        message(WARNING "Building libc on GNU/Linux is not supported")
     endif()
-    message("-- Building libc and low-level libraries")
+    message(STATUS "Building libc and low-level libraries")
     # Enable LSB required low-level libraries, including libc
+    add_subdirectory(libc) # Libc defines headers
     add_subdirectory(libm)
-    add_subdirectory(libc)
 endif()
 
+if(LCNIX_BUILD_CMAKE)
+    message(STATUS "Building builtin CMake")
+    add_subdirectory(CMake)
+endif()
+
+
+
+if(LCNIX_BUILD_COREUTILS)
+    message(STATUS "Building coreutils")
+    add_subdirectory(lc-coreutils)
+endif()
+
+
 if(LCNIX_BUILD_SYSTEMD)
-    message("-- Building systemd")
+    message(STATUS "Building systemd")
     include(ExternalProject)
     ExternalProject_Add(systemd
         SOURCE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/systemd

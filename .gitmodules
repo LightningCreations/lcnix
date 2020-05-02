@@ -10,3 +10,6 @@
 [submodule "kernel/enumset"]
 	path = kernel/enumset
 	url = https://github.com/LightningCreations/enumset.git
+[submodule "lc-coreutils"]
+	path = lc-coreutils
+	url = https://github.com/LightningCreations/lc-coreutils.git
