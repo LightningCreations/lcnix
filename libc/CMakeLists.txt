@@ -6,10 +6,12 @@ include_directories(SYSTEM include)
 add_subdirectory(arch/${LCNIX_TARGET_ARCH})
 add_subdirectory(common)
 add_subdirectory(crt)
+add_subdirectory(ld)
 
 
 add_library(c-static STATIC $<TARGET_OBJECTS:c-arch-${LCNIX_TARGET_ARCH}> $<TARGET_OBJECTS:c-common>)
 add_library(c-shared SHARED $<TARGET_OBJECTS:c-arch-${LCNIX_TARGET_ARCH}> $<TARGET_OBJECTS:c-common>)
+add_library(c ALIAS c-static)
 set(LCNIX_LIBC_VER "0.1")
 
 set_target_properties(c-static PROPERTIES OUTPUT_NAME c)

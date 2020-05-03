@@ -33,6 +33,8 @@ if(LCNIX_BOOTSTRAP_BUILD)
         set(LCNIX_BOOTSTRAP_ROOT "/mnt/lcnix")
     endif()
     set(LCNIX_GNU_BUILD "ON")
+    set(LCCC_USE_INTERNAL_LIBCXX ON)
+    set(LCCC_USE_INTERNAL_SYSLIBS ON)
     add_subdirectory(stage1)
 endif()
 
@@ -49,10 +51,6 @@ if(NOT DEFINED LCNIX_BUILD_COREUTILS AND NOT LCNIX_CUSTOM_BUILD AND NOT LCNIX_BO
     set(LCNIX_BUILD_COREUTILS ON)
 endif()
 
-if(LCNIX_BUILD_LCCC)
-    message(STATUS "Building LCCC Compiler")
-    add_subdirectory(lccc)
-endif()
 
 if(LCNIX_BUILD_KERNEL)
     if(LCNIX_GNU_BUILD)
@@ -72,6 +70,11 @@ if(LCNIX_BUILD_LIBC)
     # Enable LSB required low-level libraries, including libc
     add_subdirectory(libc) # Libc defines headers
     add_subdirectory(libm)
+endif()
+
+if(LCNIX_BUILD_LCCC)
+    message(STATUS "Building LCCC Compiler")
+    add_subdirectory(lccc)
 endif()
 
 if(LCNIX_BUILD_CMAKE)
