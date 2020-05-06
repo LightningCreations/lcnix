@@ -8,6 +8,7 @@
     <mapping directory="$PROJECT_DIR$/lccc" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/lccc/codegen-llvm/llvm-project" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/lccc/java/lcjrt" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/lcsh" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/systemd" vcs="Git" />
   </component>
 </project>

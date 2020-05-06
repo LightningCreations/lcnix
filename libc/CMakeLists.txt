@@ -19,5 +19,5 @@ set_target_properties(c-shared PROPERTIES OUTPUT_NAME c SOVERSION ${LCNIX_LIBC_V
 target_link_options(c-shared PRIVATE "-nostdlib")
 target_link_options(c-static PRIVATE "-nostdlib")
 
-install(TARGETS c-static c-shared crt LIBRARY DESTINATION lib OBJECTS DESTINATION lib)
+install(TARGETS c-static c-shared crt EXPORT libc LIBRARY DESTINATION lib OBJECTS DESTINATION lib)
 install(DIRECTORY include DESTINATION . FILES_MATCHING PATTERN "*.h")

@@ -51,6 +51,9 @@ if(NOT DEFINED LCNIX_BUILD_COREUTILS AND NOT LCNIX_CUSTOM_BUILD AND NOT LCNIX_BO
     set(LCNIX_BUILD_COREUTILS ON)
 endif()
 
+if(NOT DEFINED LCNIX_BUILD_LCSH AND NOT LCNIX_CUSTOM_BUILD)
+    set(LCNIX_BUILD_LCSH ON)
+endif()
 
 if(LCNIX_BUILD_KERNEL)
     if(LCNIX_GNU_BUILD)
@@ -82,7 +85,10 @@ if(LCNIX_BUILD_CMAKE)
     add_subdirectory(CMake)
 endif()
 
-
+if(LCNIX_BUILD_LCSH)
+    message(STATUS "Building lcsh")
+    add_subdirectory(lcsh)
+endif()
 
 if(LCNIX_BUILD_COREUTILS)
     message(STATUS "Building coreutils")
@@ -97,8 +103,8 @@ if(LCNIX_BUILD_SYSTEMD)
         SOURCE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/systemd
         BINARY_DIR ${CMAKE_CURRENT_BINARY_DIR}/systemd
         CONFIGURE_COMMAND ${CMAKE_CURRENT_SOURCE_DIR}/systemd/configure --prefix=${CMAKE_INSTALL_PREFIX} ${CMAKE_CURRENT_SOURCE_DIR}/systemd # Rdr can you wire this properly
-        BUILD_COMMAND make
-        INSTALL_COMMAND make install
+        BUILD_COMMAND ninja
+        INSTALL_COMMAND ninja install
     )
 endif()
 

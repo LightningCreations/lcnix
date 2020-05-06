@@ -19,19 +19,20 @@ pub mod types {
 
     pub const EV_NONE: u8 = 0;
     pub const EV_CURRENT: u8 = 1;
-
+    #[repr(C)]
     pub struct ElfIdent{
         pub ei_magic: [u8;4],
         pub ei_class: u8,
         pub ei_data: u8,
         pub ei_version: u8,
         pub ei_osabi: u8,
-
+        pub ei_abiver: u8,
+        pub ei_pad: [u8;7]
     }
 
     #[repr(C)]
     pub struct Elf32_head{
-        pub e_ident: [u8;EI_NIDENT],
+        pub e_ident: ElfIdent,
 
     }
 
