@@ -29,4 +29,5 @@ pub mod errno;
 pub mod sys;
 pub mod cap;
 pub mod elf;
+pub mod bus;
 mod alloc;

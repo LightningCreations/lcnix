@@ -3,6 +3,7 @@
 .global memmove
 .global memcmp
 .global memset
+.global bcmp
 
 memcpy:
     mov %rdi,%r11

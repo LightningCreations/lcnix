@@ -7,7 +7,6 @@ SECTIONS {
         __stack_head = .;
     }
     __vram_start = 0xb8000;
-
     .pt ALIGN(4096):{
         __pt_start = 0;
         __pml4t = 0;

@@ -13,3 +13,6 @@
 [submodule "lc-coreutils"]
 	path = lc-coreutils
 	url = https://github.com/LightningCreations/lc-coreutils.git
+[submodule "lcsh"]
+	path = lcsh
+	url = https://github.com/LightningCreations/lcsh.git
