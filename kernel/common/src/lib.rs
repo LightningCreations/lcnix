@@ -8,6 +8,9 @@ use crate::sys::disp::PrintkFormatter;
 extern"C"{
     #[no_mangle]
     pub fn init_syscall_handle();
+    #[no_mangle]
+    pub fn init_interrupts();
+    #[no_mangle]
     pub fn halt() -> !;
 }
 

@@ -1,0 +1,164 @@
+   Compiling proc-macro2 v1.0.10
+   Compiling unicode-xid v0.2.0
+     Running `rustc --crate-name build_script_build --edition=2018 /home/chorm/.cargo/registry/src/github.com-1ecc6299db9ec823/proc-macro2-1.0.10/build.rs --error-format=json --json=diagnostic-rendered-ansi --crate-type bin --emit=dep-info,link -C opt-level=1 -C debuginfo=2 -C debug-assertions=on --cfg 'feature="default"' --cfg 'feature="proc-macro"' -C metadata=74d2d8c644bd7cc6 -C extra-filename=-74d2d8c644bd7cc6 --out-dir /home/chorm/lcnix/kernel/common/target/debug/build/proc-macro2-74d2d8c644bd7cc6 -L dependency=/home/chorm/lcnix/kernel/common/target/debug/deps --cap-lints allow`
+     Running `rustc --crate-name unicode_xid /home/chorm/.cargo/registry/src/github.com-1ecc6299db9ec823/unicode-xid-0.2.0/src/lib.rs --error-format=json --json=diagnostic-rendered-ansi,artifacts --crate-type lib --emit=dep-info,metadata,link -C opt-level=1 -C debuginfo=2 -C debug-assertions=on --cfg 'feature="default"' -C metadata=760f3edc59c225db -C extra-filename=-760f3edc59c225db --out-dir /home/chorm/lcnix/kernel/common/target/debug/deps -L dependency=/home/chorm/lcnix/kernel/common/target/debug/deps --cap-lints allow`
+   Compiling syn v1.0.18
+     Running `rustc --crate-name build_script_build --edition=2018 /home/chorm/.cargo/registry/src/github.com-1ecc6299db9ec823/syn-1.0.18/build.rs --error-format=json --json=diagnostic-rendered-ansi --crate-type bin --emit=dep-info,link -C opt-level=1 -C debuginfo=2 -C debug-assertions=on --cfg 'feature="clone-impls"' --cfg 'feature="default"' --cfg 'feature="derive"' --cfg 'feature="extra-traits"' --cfg 'feature="full"' --cfg 'feature="parsing"' --cfg 'feature="printing"' --cfg 'feature="proc-macro"' --cfg 'feature="quote"' -C metadata=795f25cc958bf50b -C extra-filename=-795f25cc958bf50b --out-dir /home/chorm/lcnix/kernel/common/target/debug/build/syn-795f25cc958bf50b -L dependency=/home/chorm/lcnix/kernel/common/target/debug/deps --cap-lints allow`
+   Compiling fnv v1.0.6
+   Compiling ident_case v1.0.1
+     Running `rustc --crate-name fnv /home/chorm/.cargo/registry/src/github.com-1ecc6299db9ec823/fnv-1.0.6/lib.rs --error-format=json --json=diagnostic-rendered-ansi,artifacts --crate-type lib --emit=dep-info,metadata,link -C opt-level=1 -C debuginfo=2 -C debug-assertions=on -C metadata=1f63e2f241d35270 -C extra-filename=-1f63e2f241d35270 --out-dir /home/chorm/lcnix/kernel/common/target/debug/deps -L dependency=/home/chorm/lcnix/kernel/common/target/debug/deps --cap-lints allow`
+     Running `rustc --crate-name ident_case /home/chorm/.cargo/registry/src/github.com-1ecc6299db9ec823/ident_case-1.0.1/src/lib.rs --error-format=json --json=diagnostic-rendered-ansi,artifacts --crate-type lib --emit=dep-info,metadata,link -C opt-level=1 -C debuginfo=2 -C debug-assertions=on -C metadata=6f14c2f5b1eb4d4e -C extra-filename=-6f14c2f5b1eb4d4e --out-dir /home/chorm/lcnix/kernel/common/target/debug/deps -L dependency=/home/chorm/lcnix/kernel/common/target/debug/deps --cap-lints allow`
+   Compiling strsim v0.9.3
+     Running `rustc --crate-name strsim /home/chorm/.cargo/registry/src/github.com-1ecc6299db9ec823/strsim-0.9.3/src/lib.rs --error-format=json --json=diagnostic-rendered-ansi,artifacts --crate-type lib --emit=dep-info,metadata,link -C opt-level=1 -C debuginfo=2 -C debug-assertions=on -C metadata=29c6bf6ea775d079 -C extra-filename=-29c6bf6ea775d079 --out-dir /home/chorm/lcnix/kernel/common/target/debug/deps -L dependency=/home/chorm/lcnix/kernel/common/target/debug/deps --cap-lints allow`
+   Compiling autocfg v1.0.0
+     Running `rustc --crate-name autocfg /home/chorm/.cargo/registry/src/github.com-1ecc6299db9ec823/autocfg-1.0.0/src/lib.rs --error-format=json --json=diagnostic-rendered-ansi --crate-type lib --emit=dep-info,metadata,link -C opt-level=1 -C debuginfo=2 -C debug-assertions=on -C metadata=4fc1a34c316813b9 -C extra-filename=-4fc1a34c316813b9 --out-dir /home/chorm/lcnix/kernel/common/target/debug/deps -L dependency=/home/chorm/lcnix/kernel/common/target/debug/deps --cap-lints allow`
+     Running `/home/chorm/lcnix/kernel/common/target/debug/build/proc-macro2-74d2d8c644bd7cc6/build-script-build`
+     Running `/home/chorm/lcnix/kernel/common/target/debug/build/syn-795f25cc958bf50b/build-script-build`
+     Running `rustc --crate-name proc_macro2 --edition=2018 /home/chorm/.cargo/registry/src/github.com-1ecc6299db9ec823/proc-macro2-1.0.10/src/lib.rs --error-format=json --json=diagnostic-rendered-ansi,artifacts --crate-type lib --emit=dep-info,metadata,link -C opt-level=1 -C debuginfo=2 -C debug-assertions=on --cfg 'feature="default"' --cfg 'feature="proc-macro"' -C metadata=3dc6198a7ebb2607 -C extra-filename=-3dc6198a7ebb2607 --out-dir /home/chorm/lcnix/kernel/common/target/debug/deps -L dependency=/home/chorm/lcnix/kernel/common/target/debug/deps --extern unicode_xid=/home/chorm/lcnix/kernel/common/target/debug/deps/libunicode_xid-760f3edc59c225db.rmeta --cap-lints allow --cfg use_proc_macro --cfg wrap_proc_macro --cfg proc_macro_span`
+   Compiling num-traits v0.2.11
+     Running `rustc --crate-name build_script_build /home/chorm/.cargo/registry/src/github.com-1ecc6299db9ec823/num-traits-0.2.11/build.rs --error-format=json --json=diagnostic-rendered-ansi --crate-type bin --emit=dep-info,link -C opt-level=1 -C debuginfo=2 -C debug-assertions=on -C metadata=a7bfb06a1728364b -C extra-filename=-a7bfb06a1728364b --out-dir /home/chorm/lcnix/kernel/common/target/debug/build/num-traits-a7bfb06a1728364b -L dependency=/home/chorm/lcnix/kernel/common/target/debug/deps --extern autocfg=/home/chorm/lcnix/kernel/common/target/debug/deps/libautocfg-4fc1a34c316813b9.rlib --cap-lints allow`
+   Compiling quote v1.0.3
+     Running `rustc --crate-name quote --edition=2018 /home/chorm/.cargo/registry/src/github.com-1ecc6299db9ec823/quote-1.0.3/src/lib.rs --error-format=json --json=diagnostic-rendered-ansi,artifacts --crate-type lib --emit=dep-info,metadata,link -C opt-level=1 -C debuginfo=2 -C debug-assertions=on --cfg 'feature="default"' --cfg 'feature="proc-macro"' -C metadata=1b905eae8943aca2 -C extra-filename=-1b905eae8943aca2 --out-dir /home/chorm/lcnix/kernel/common/target/debug/deps -L dependency=/home/chorm/lcnix/kernel/common/target/debug/deps --extern proc_macro2=/home/chorm/lcnix/kernel/common/target/debug/deps/libproc_macro2-3dc6198a7ebb2607.rmeta --cap-lints allow`
+     Running `/home/chorm/lcnix/kernel/common/target/debug/build/num-traits-a7bfb06a1728364b/build-script-build`
+     Running `rustc --crate-name syn --edition=2018 /home/chorm/.cargo/registry/src/github.com-1ecc6299db9ec823/syn-1.0.18/src/lib.rs --error-format=json --json=diagnostic-rendered-ansi,artifacts --crate-type lib --emit=dep-info,metadata,link -C opt-level=1 -C debuginfo=2 -C debug-assertions=on --cfg 'feature="clone-impls"' --cfg 'feature="default"' --cfg 'feature="derive"' --cfg 'feature="extra-traits"' --cfg 'feature="full"' --cfg 'feature="parsing"' --cfg 'feature="printing"' --cfg 'feature="proc-macro"' --cfg 'feature="quote"' -C metadata=7a3f83a60124044f -C extra-filename=-7a3f83a60124044f --out-dir /home/chorm/lcnix/kernel/common/target/debug/deps -L dependency=/home/chorm/lcnix/kernel/common/target/debug/deps --extern proc_macro2=/home/chorm/lcnix/kernel/common/target/debug/deps/libproc_macro2-3dc6198a7ebb2607.rmeta --extern quote=/home/chorm/lcnix/kernel/common/target/debug/deps/libquote-1b905eae8943aca2.rmeta --extern unicode_xid=/home/chorm/lcnix/kernel/common/target/debug/deps/libunicode_xid-760f3edc59c225db.rmeta --cap-lints allow`
+     Running `rustc --crate-name num_traits /home/chorm/.cargo/registry/src/github.com-1ecc6299db9ec823/num-traits-0.2.11/src/lib.rs --error-format=json --json=diagnostic-rendered-ansi,artifacts --crate-type lib --emit=dep-info,metadata,link -C opt-level=1 -C panic=abort -C debuginfo=2 -C debug-assertions=on -C metadata=a9e849a1cd43fd8c -C extra-filename=-a9e849a1cd43fd8c --out-dir /home/chorm/lcnix/kernel/common/target/debug/deps -L dependency=/home/chorm/lcnix/kernel/common/target/debug/deps --cap-lints allow --cfg has_i128`
+   Compiling darling_core v0.10.2
+     Running `rustc --crate-name darling_core /home/chorm/.cargo/registry/src/github.com-1ecc6299db9ec823/darling_core-0.10.2/src/lib.rs --error-format=json --json=diagnostic-rendered-ansi,artifacts --crate-type lib --emit=dep-info,metadata,link -C opt-level=1 -C debuginfo=2 -C debug-assertions=on --cfg 'feature="strsim"' --cfg 'feature="suggestions"' -C metadata=dc2e09d38ac3b8cf -C extra-filename=-dc2e09d38ac3b8cf --out-dir /home/chorm/lcnix/kernel/common/target/debug/deps -L dependency=/home/chorm/lcnix/kernel/common/target/debug/deps --extern fnv=/home/chorm/lcnix/kernel/common/target/debug/deps/libfnv-1f63e2f241d35270.rmeta --extern ident_case=/home/chorm/lcnix/kernel/common/target/debug/deps/libident_case-6f14c2f5b1eb4d4e.rmeta --extern proc_macro2=/home/chorm/lcnix/kernel/common/target/debug/deps/libproc_macro2-3dc6198a7ebb2607.rmeta --extern quote=/home/chorm/lcnix/kernel/common/target/debug/deps/libquote-1b905eae8943aca2.rmeta --extern strsim=/home/chorm/lcnix/kernel/common/target/debug/deps/libstrsim-29c6bf6ea775d079.rmeta --extern syn=/home/chorm/lcnix/kernel/common/target/debug/deps/libsyn-7a3f83a60124044f.rmeta --cap-lints allow`
+   Compiling kernel-attributes v0.1.0 (/home/chorm/lcnix/kernel/common/kernel-attributes)
+     Running `rustc --crate-name kernel_attributes --edition=2018 kernel-attributes/src/lib.rs --error-format=json --json=diagnostic-rendered-ansi --crate-type proc-macro --emit=dep-info,link -C prefer-dynamic -C opt-level=1 -C debuginfo=2 -C debug-assertions=on -C metadata=a2ddaeb3cf5b7db7 -C extra-filename=-a2ddaeb3cf5b7db7 --out-dir /home/chorm/lcnix/kernel/common/target/debug/deps -C incremental=/home/chorm/lcnix/kernel/common/target/debug/incremental -L dependency=/home/chorm/lcnix/kernel/common/target/debug/deps --extern quote=/home/chorm/lcnix/kernel/common/target/debug/deps/libquote-1b905eae8943aca2.rlib --extern syn=/home/chorm/lcnix/kernel/common/target/debug/deps/libsyn-7a3f83a60124044f.rlib --extern proc_macro`
+   Compiling darling_macro v0.10.2
+     Running `rustc --crate-name darling_macro /home/chorm/.cargo/registry/src/github.com-1ecc6299db9ec823/darling_macro-0.10.2/src/lib.rs --error-format=json --json=diagnostic-rendered-ansi --crate-type proc-macro --emit=dep-info,link -C prefer-dynamic -C opt-level=1 -C debuginfo=2 -C debug-assertions=on -C metadata=328940adb399e0b2 -C extra-filename=-328940adb399e0b2 --out-dir /home/chorm/lcnix/kernel/common/target/debug/deps -L dependency=/home/chorm/lcnix/kernel/common/target/debug/deps --extern darling_core=/home/chorm/lcnix/kernel/common/target/debug/deps/libdarling_core-dc2e09d38ac3b8cf.rlib --extern quote=/home/chorm/lcnix/kernel/common/target/debug/deps/libquote-1b905eae8943aca2.rlib --extern syn=/home/chorm/lcnix/kernel/common/target/debug/deps/libsyn-7a3f83a60124044f.rlib --extern proc_macro --cap-lints allow`
+   Compiling darling v0.10.2
+     Running `rustc --crate-name darling /home/chorm/.cargo/registry/src/github.com-1ecc6299db9ec823/darling-0.10.2/src/lib.rs --error-format=json --json=diagnostic-rendered-ansi --crate-type lib --emit=dep-info,metadata,link -C opt-level=1 -C debuginfo=2 -C debug-assertions=on --cfg 'feature="default"' --cfg 'feature="suggestions"' -C metadata=30e58b611f7f3786 -C extra-filename=-30e58b611f7f3786 --out-dir /home/chorm/lcnix/kernel/common/target/debug/deps -L dependency=/home/chorm/lcnix/kernel/common/target/debug/deps --extern darling_core=/home/chorm/lcnix/kernel/common/target/debug/deps/libdarling_core-dc2e09d38ac3b8cf.rmeta --extern darling_macro=/home/chorm/lcnix/kernel/common/target/debug/deps/libdarling_macro-328940adb399e0b2.so --cap-lints allow`
+   Compiling enumset_derive v0.5.0 (/home/chorm/lcnix/kernel/enumset/enumset_derive)
+     Running `rustc --crate-name enumset_derive --edition=2018 /home/chorm/lcnix/kernel/enumset/enumset_derive/src/lib.rs --error-format=json --json=diagnostic-rendered-ansi --crate-type proc-macro --emit=dep-info,link -C prefer-dynamic -C opt-level=1 -C debuginfo=2 -C debug-assertions=on -C metadata=a67d1d8480f129a1 -C extra-filename=-a67d1d8480f129a1 --out-dir /home/chorm/lcnix/kernel/common/target/debug/deps -C incremental=/home/chorm/lcnix/kernel/common/target/debug/incremental -L dependency=/home/chorm/lcnix/kernel/common/target/debug/deps --extern darling=/home/chorm/lcnix/kernel/common/target/debug/deps/libdarling-30e58b611f7f3786.rlib --extern proc_macro2=/home/chorm/lcnix/kernel/common/target/debug/deps/libproc_macro2-3dc6198a7ebb2607.rlib --extern quote=/home/chorm/lcnix/kernel/common/target/debug/deps/libquote-1b905eae8943aca2.rlib --extern syn=/home/chorm/lcnix/kernel/common/target/debug/deps/libsyn-7a3f83a60124044f.rlib --extern proc_macro`
+   Compiling enumset v1.0.0 (/home/chorm/lcnix/kernel/enumset/enumset)
+     Running `rustc --crate-name enumset --edition=2018 /home/chorm/lcnix/kernel/enumset/enumset/src/lib.rs --error-format=json --json=diagnostic-rendered-ansi --crate-type lib --emit=dep-info,metadata,link -C opt-level=1 -C panic=abort -C debuginfo=2 -C debug-assertions=on -C metadata=7cb14bf84720b8fa -C extra-filename=-7cb14bf84720b8fa --out-dir /home/chorm/lcnix/kernel/common/target/debug/deps -C incremental=/home/chorm/lcnix/kernel/common/target/debug/incremental -L dependency=/home/chorm/lcnix/kernel/common/target/debug/deps --extern enumset_derive=/home/chorm/lcnix/kernel/common/target/debug/deps/libenumset_derive-a67d1d8480f129a1.so --extern num_traits=/home/chorm/lcnix/kernel/common/target/debug/deps/libnum_traits-a9e849a1cd43fd8c.rmeta`
+   Compiling common v0.1.0 (/home/chorm/lcnix/kernel/common)
+     Running `
+rustc --crate-name lcnix_kernel_common --edition=2018 src/lib.rs --error-format=json
+ --json=diagnostic-rendered-ansi --crate-type staticlib --emit=dep-info,link
+  -C opt-level=1 -C panic=abort -C lto -C debuginfo=2 -C debug-assertions=on
+   -C metadata=660cba1a8ca27277 -C extra-filename=-660cba1a8ca27277
+    --out-dir /home/chorm/lcnix/kernel/common/target/debug/deps -C
+     incremental=/home/chorm/lcnix/kernel/common/target/debug/incremental
+     -L dependency=/home/chorm/lcnix/kernel/common/target/debug/deps
+      --extern enumset=/home/chorm/lcnix/kernel/common/target/debug/deps/libenumset-7cb14bf84720b8fa.rlib
+      --extern enumset_derive=/home/chorm/lcnix/kernel/common/target/debug/deps/libenumset_derive-a67d1d8480f129a1.so
+      --extern kernel_attributes=/home/chorm/lcnix/kernel/common/target/debug/deps/libkernel_attributes-a2ddaeb3cf5b7db7.so`
+
+warning: unused import: `Formatter`
+ --> src/sys/disp.rs:1:17
+  |
+1 | use core::fmt::{Formatter, Write, Error,Result};
+  |                 ^^^^^^^^^
+  |
+  = note: `#[warn(unused_imports)]` on by default
+
+warning: unused import: `core::alloc::Layout`
+ --> src/alloc.rs:5:5
+  |
+5 | use core::alloc::Layout;
+  |     ^^^^^^^^^^^^^^^^^^^
+
+warning: unused variable: `mb_struct`
+  --> src/lib.rs:17:38
+   |
+17 | pub unsafe extern"C" fn start_kernel(mb_struct: *const c_void) -> !{
+   |                                      ^^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_mb_struct`
+   |
+   = note: `#[warn(unused_variables)]` on by default
+
+warning: unused variable: `msg`
+ --> src/kpanic.rs:6:18
+  |
+6 |     if let Some(&msg) = panic.payload().downcast_ref::<&'static str>(){
+  |                  ^^^ help: if this is intentional, prefix it with an underscore: `_msg`
+
+warning: unused variable: `fd`
+  --> src/file.rs:14:39
+   |
+14 |     pub unsafe extern "C" fn sys_read(fd: Fd, ptr: UserPtr<c_void>, len: usize) -> isize {
+   |                                       ^^ help: if this is intentional, prefix it with an underscore: `_fd`
+
+warning: unused variable: `ptr`
+  --> src/file.rs:14:47
+   |
+14 |     pub unsafe extern "C" fn sys_read(fd: Fd, ptr: UserPtr<c_void>, len: usize) -> isize {
+   |                                               ^^^ help: if this is intentional, prefix it with an underscore: `_ptr`
+
+warning: unused variable: `len`
+  --> src/file.rs:14:69
+   |
+14 |     pub unsafe extern "C" fn sys_read(fd: Fd, ptr: UserPtr<c_void>, len: usize) -> isize {
+   |                                                                     ^^^ help: if this is intentional, prefix it with an underscore: `_len`
+
+warning: type alias is never used: `gfp_t`
+ --> src/alloc.rs:8:1
+  |
+8 | type gfp_t = u16;
+  | ^^^^^^^^^^^^^^^^^
+  |
+  = note: `#[warn(dead_code)]` on by default
+
+warning: constant is never used: `GFP_USER`
+  --> src/alloc.rs:10:1
+   |
+10 | const GFP_USER: gfp_t = 0;
+   | ^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: constant is never used: `GFP_KERNEL`
+  --> src/alloc.rs:11:1
+   |
+11 | const GFP_KERNEL: gfp_t = 1;
+   | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: constant is never used: `GFP_ATOMIC`
+  --> src/alloc.rs:12:1
+   |
+12 | const GFP_ATOMIC: gfp_t = 2;
+   | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: constant is never used: `GFP_HIGHUSER`
+  --> src/alloc.rs:13:1
+   |
+13 | const GFP_HIGHUSER: gfp_t = 3;
+   | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: constant is never used: `GFP_NOIO`
+  --> src/alloc.rs:14:1
+   |
+14 | const GFP_NOIO: gfp_t = 4;
+   | ^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: constant is never used: `GFP_NOFS`
+  --> src/alloc.rs:15:1
+   |
+15 | const GFP_NOFS: gfp_t = 5;
+   | ^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: constant is never used: `GFP_NOWAIT`
+  --> src/alloc.rs:16:1
+   |
+16 | const GFP_NOWAIT: gfp_t = 6;
+   | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: constant is never used: `GFP_DMA`
+  --> src/alloc.rs:18:1
+   |
+18 | const GFP_DMA: gfp_t = 8;
+   | ^^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: unused `core::result::Result` that must be used
+  --> src/lib.rs:19:5
+   |
+19 |     writeln!(&mut PrintkFormatter,"Test");
+   |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   |
+   = note: `#[warn(unused_must_use)]` on by default
+   = note: this `Result` may be an `Err` variant, which should be handled
+   = note: this warning originates in a macro (in Nightly builds, run with -Z macro-backtrace for more info)
+
+warning: 17 warnings emitted
+
+    Finished dev [optimized + debuginfo] target(s) in 4m 49s

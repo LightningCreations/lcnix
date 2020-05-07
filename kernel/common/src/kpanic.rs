@@ -6,5 +6,5 @@ pub fn kernel_panic(panic: &PanicInfo) -> !{
     if let Some(&msg) = panic.payload().downcast_ref::<&'static str>(){
 
     }
-    halt()
+    unsafe{halt()}
 }
