@@ -1,5 +1,7 @@
 #![allow(non_camel_case_types)]
 
+use crate::ptr::Unpaged;
+
 pub type id_t = i64;
 
 pub type uid_t = id_t;
@@ -14,6 +16,26 @@ pub type ssize_t = isize;
 pub type mm_reg = core::arch::x86_64::__mm256i;
 #[cfg(not(target_feature="avx2"))]
 pub type mm_reg = core::arch::x86_64::__mm128i;
+
+#[repr(C)]
+pub struct PL4MT{
+    pub pdpt: [Unpaged<PDPT>;512]
+}
+
+#[repr(C)]
+pub struct PDPT{
+    pub ppt: [Unpaged<PPT>;512]
+}
+
+#[repr(C)]
+pub struct PPT{
+    pub pt: [Unpaged<PT>; 512]
+}
+
+#[repr(C)]
+pub struct PT{
+    pub unpaged_addr: [usize;512]
+}
 
 #[repr(C)]
 pub struct ProcFrame{
@@ -46,3 +68,11 @@ pub struct ProcFrame{
     pub mm6: mm_reg,
     pub mm7: mm_reg
 }
+
+#[repr(C)]
+pub struct ArchProcInfo{
+    pub frame: *mut ProcFrame,
+    pub pt_absolute: Unpaged<PL4MT>
+}
+
+

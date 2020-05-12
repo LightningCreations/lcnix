@@ -6,6 +6,7 @@ __idt_info:
 
 .text
 
+
 .global init_idt_tab
 init_idt_tab:
     lidt (__idt_info)
