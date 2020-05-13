@@ -1,6 +1,6 @@
 .text
 
-.globl syscall
+.global syscall
 syscall:
     # Bump all arguments by one, and move the first (the syscall number) into rax
     mov %rdi,%rax
@@ -15,8 +15,9 @@ syscall:
     js .seterrno
     ret
     .seterrno:
-    call __errno_get_tls
+    lea __errno, %rsi
     neg %rdi
-    mov %rdi,(%rax)
+    mov %rdi,(%rsi)
+
     ret
 

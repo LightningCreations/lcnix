@@ -2,6 +2,7 @@
 use crate::sys::types::{uid_t, gid_t, pid_t};
 use enumset::EnumSet;
 use crate::cap::Capability;
+use crate::syscall::SyscallParam;
 
 #[repr(transparent)]
 #[derive(Copy,Clone,PartialEq,Eq)]
@@ -35,6 +36,8 @@ impl Gid{
 #[repr(transparent)]
 #[derive(Copy,Clone,PartialEq,Eq)]
 pub struct Pid(pub pid_t);
+
+unsafe impl SyscallParam for Pid{}
 
 pub const KERNEL_PID: Pid = Pid(0);
 pub const INIT_PID: Pid = Pid(1);

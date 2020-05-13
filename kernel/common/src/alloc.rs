@@ -2,7 +2,6 @@
 
 use core::ffi::c_void;
 use crate::sys::types::size_t;
-use core::alloc::Layout;
 
 #[allow(non_camel_case_types)]
 type gfp_t = u16;

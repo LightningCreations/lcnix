@@ -21,7 +21,7 @@ extern"C"{
 pub unsafe extern"C" fn start_kernel(mb_struct: *const c_void) -> !{
     init_syscall_handle();
     init_interrupts();
-    writeln!(&mut PrintkFormatter,"Test");
+    let _ = writeln!(&mut PrintkFormatter,"Test");
     halt()
 }
 

@@ -13,9 +13,9 @@ pub type size_t = usize;
 pub type ssize_t = isize;
 
 #[cfg(target_feature = "avx2")]
-pub type mm_reg = core::arch::x86_64::__mm256i;
+pub type mm_reg = core::arch::x86_64::__m256i;
 #[cfg(not(target_feature="avx2"))]
-pub type mm_reg = core::arch::x86_64::__mm128i;
+pub type mm_reg = core::arch::x86_64::__m128i;
 
 #[repr(C)]
 pub struct PL4MT{
