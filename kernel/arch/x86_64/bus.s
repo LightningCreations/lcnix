@@ -41,4 +41,5 @@ write32:
 kwrite:
     mov %rsi,%rcx
     mov %rdi,%rsi
+    # Note, this is unfinished.
     ret
