@@ -53,7 +53,7 @@ pub struct SyscallDecl(*const ());
 unsafe impl Sync for SyscallDecl{} // Hack to work around rust's very stuborn type system.
 
 macro_rules! parcount{
-    ("0") => {{
+    (0) => {{
         unsafe extern"C" fn __test<R: SyscallParam>() -> R{
             core::hint::unreachable_unchecked()
         }
