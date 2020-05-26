@@ -3,24 +3,8 @@ project(lcnix CXX)
 
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_CURRENT_SOURCE_DIR}/cmake-modules" "${CMAKE_CURRENT_SOURCE_DIR}/lccc/cmake")
 
-# If we have lccc, use it.
-# If someone knows what they are doing on clang or gcc, then can -DLCNIX_OVERRIDE_COMPILERS
-# GNU Toolchain is not supported for full Builds.
-# Bootstrapping with GCC is supported, as is using gnu binutils with clang in both GNU mode and Native Mode
-# lccc is recommended natively.
-include(detect_lccc.cmake)
-if(NOT LCNIX_OVERRIDE_COMPILERS)
-    detect_lccc(C CMAKE_C_COMPILER)
-    detect_lccc(CXX CMAKE_CXX_COMPILER)
-    detect_lccc(LD CMAKE_LD)
-    detect_lccc(AR CMAKE_AR)
-else()
-    message(WARNING "-- Overriding detection of lc toolchain, this can cause problems with builds")
-endif()
 
-# The following lines are for satisfying CMAKE
-# Remove in production
-set(LCNIX_TARGET_ARCH x86_64)
+set(LCNIX_TARGET_ARCH ${CMAKE_SYSTEM_PROCESSOR} CACHE STRING "Sets the architecture to target with the lcnix build. This is an advanced operation. When cross-compiling you should use a Cross-compilation script that sets CMAKE_SYSTEM_PROCESSOR")
 
 
 if(LCNIX_BOOTSTRAP_BUILD AND LCNIX_GNU_BUILD)

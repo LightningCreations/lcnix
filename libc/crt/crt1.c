@@ -1,3 +1,4 @@
+#pragma ide diagnostic ignored "bugprone-reserved-identifier"
 
 
 void exit(int code)__attribute__((noreturn));

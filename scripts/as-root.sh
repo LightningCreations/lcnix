@@ -8,8 +8,7 @@ $@
 exit $?
 fi
 
-if [-x $(command -v sudo)]
-
-
-
+if [-x $(which sudo)]
+sudo $@
+fi
 
