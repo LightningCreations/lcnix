@@ -15,7 +15,7 @@ syscall:
     js .seterrno
     ret
     .seterrno:
-    lea __errno, %rsi
+    lea __errno(%rip), %rsi
     neg %rdi
     mov %rdi,(%rsi)
 
