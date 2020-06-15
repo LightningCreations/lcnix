@@ -6,4 +6,5 @@ add_library(i386-loader OBJECT loader.s)
 
 add_library(lcnix-kernel-arch-x86_64 STATIC syscall_init.s bus.s gdt.c idt.c loader-64long.s $<TARGET_OBJECTS:i386-loader> halt.s memcpy.c isrs.s)
 
+target_compile_options(lcnix-kernel-arch-x86_64 PRIVATE -ffreestanding)
 
