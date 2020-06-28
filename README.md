@@ -12,7 +12,7 @@ The lcnix kernel (under kernel),
  Dual Licensed Under the terms of the MIT License and Apache License.
  The original fork can be found at <https://github.com/Lymia/enumset>. 
 
- libc (et al. )
+ libc (et al.)
   are all licensed under the terms of the GNU Lesser General Public License v3
   or (at your option) any later version.
   

@@ -56,7 +56,6 @@ if(LCNIX_BUILD_LIBC)
     message(STATUS "Building libc and low-level libraries")
     # Enable LSB required low-level libraries, including libc
     add_subdirectory(libc) # Libc defines headers
-    add_subdirectory(libm)
 endif()
 
 if(LCNIX_BUILD_LCCC)

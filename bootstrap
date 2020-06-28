@@ -13,13 +13,13 @@ scripts/as-root.sh mount -B . $MOUNT_SOURCES
 build_stage1(){
     mkdir stage1
     cmake -DCMAKE_INSTALL_PREFIX=${MOUNT_SOURCES} -DLCNIX_BOOTSTRAP_BUILD=ON ..
-    cmake --build . --target all -- -j${BOOTSTRAP_JOBS}
-    scripts/as-root.sh cmake --build . --target install
+    cmake --build . --target all -- --parallel ${BOOTSTRAP_JOBS}
+    scripts/as-root.sh cmake --install .
 }
 
 build_stage2(){
     scripts/as-root.sh scripts/mount-fs.sh
-    scripts/as-root.sh chroot /lcnix-stage1/bin/env PATH=/usr/bin:/bin:/usr/sbin:/sbin:/lcnix-stage1/bin:/lcnix-stage1/sbin TERM=$TERM LD_LIBRARY_PATH=/lcnix-stage1/lib \
+    scripts/as-root.sh chroot ${MOUNT_ROOT} /lcnix-stage1/bin/env PATH=/usr/bin:/bin:/usr/sbin:/sbin:/lcnix-stage1/bin:/lcnix-stage1/sbin TERM=$TERM LD_LIBRARY_PATH=/lcnix-stage1/lib \
      /lcnix-stage1/bin/sh /lcnix-sources/scripts/stage2.sh
 }
 

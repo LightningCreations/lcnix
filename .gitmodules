@@ -16,3 +16,6 @@
 [submodule "lcsh"]
 	path = lcsh
 	url = https://github.com/LightningCreations/lcsh.git
+[submodule "libc"]
+	path = libc
+	url = https://github.com/LightningCreations/libc.git
