@@ -16,7 +16,9 @@ enumset = {path="../enumset/enumset"}
 enumset_derive = { version = "0.5.0", path = "../enumset/enumset_derive" }
 compiler_builtins = "0.1.32"
 
+
 [features]
+lc_hypervisor = []
 
 [profile.dev]
 panic = "abort"

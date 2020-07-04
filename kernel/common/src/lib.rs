@@ -35,4 +35,6 @@ pub mod sys;
 pub mod cap;
 pub mod elf;
 pub mod bus;
+#[cfg(feature="lc_hypervisor")]
+pub mod hypervisor;
 mod alloc;
