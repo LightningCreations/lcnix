@@ -13,13 +13,13 @@ _start:
     mov %esp,%ebp
     push %ebx
     # Testing for CPUID
-    pushfd
+    pushfl
     pop %eax
     mov %eax,%ecx
     xor $2097152,%eax
     push %eax
-    popfd
-    pushfd
+    popfl
+    pushfl
     pop %eax
     push %ecx
     popfd

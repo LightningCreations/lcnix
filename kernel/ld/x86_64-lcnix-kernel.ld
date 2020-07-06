@@ -1,7 +1,6 @@
 INCLUDE generic-lcnix-kernel.ld
 
 SECTIONS {
-    bcmp = memcmp;
     .bss.stack ALIGN(4096):{
         __stack_tail = .;
         . = .+4096;
