@@ -6,6 +6,10 @@ set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_CURRENT_SOURCE_DIR}/cmake-mo
 
 set(LCNIX_TARGET_ARCH ${CMAKE_SYSTEM_PROCESSOR} CACHE STRING "Sets the architecture to target with the lcnix build. This is an advanced operation. When cross-compiling you should use a Cross-compilation script that sets CMAKE_SYSTEM_PROCESSOR")
 
+option(LCNIX_GNU_BUILD "Build tools of lcnix for a gnu based system" OFF)
+option(LCNIX_BOOTSTRAP_BUILD "Bootstrap lcnix onto a specified partition" OFF)
+option(LCNIX_CUSTOM_BUILD "Build only the tools you enable on the command line" OFF)
+mark_as_advanced(LCNIX_CUSTOM_BUILD)
 
 if(LCNIX_BOOTSTRAP_BUILD AND LCNIX_GNU_BUILD)
     message(FATAL_ERROR "Bootstrapping, and in-place GNU Build are mutually exclusive")
@@ -75,6 +79,7 @@ endif()
 
 if(LCNIX_BUILD_COREUTILS)
     message(STATUS "Building coreutils")
+    enable_testing()
     add_subdirectory(lc-coreutils)
 endif()
 

@@ -10,5 +10,8 @@ fi
 
 if [-x $(which sudo)]
 sudo $@
+exit $?
 fi
 
+$@
+exit $?
