@@ -22,7 +22,7 @@ _start:
     pushfl
     pop %eax
     push %ecx
-    popfd
+    popfl
     xor %eax,%ecx
     jz _hlt # No CPUID, just halt
     mov $0x80000000,%eax
