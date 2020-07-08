@@ -1,5 +1,7 @@
 #![no_std]
 
+extern crate compiler_builtins;
+
 use core::fmt::Write;
 
 use core::ffi::c_void;
