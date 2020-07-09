@@ -4,10 +4,15 @@
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/CMake" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/kernel/enumset" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/lc-binutils" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/lc-coreutils" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/lc-make" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/lccc" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/lccc/codegen-llvm/llvm-project" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/lccc/java/lcjrt" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/lconf" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/lconf/C-Programming-Utilities" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/lconf/lua" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/lcsh" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/libc" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/systemd" vcs="Git" />

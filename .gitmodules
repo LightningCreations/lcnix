@@ -19,3 +19,12 @@
 [submodule "libc"]
 	path = libc
 	url = https://github.com/LightningCreations/libc.git
+[submodule "lconf"]
+	path = lconf
+	url = https://.com/LightningCreations/lconf.git
+[submodule "lc-binutils"]
+	path = lc-binutils
+	url = https://github.com/LightningCreations/lc-binutils.git
+[submodule "lc-make"]
+	path = lc-make
+	url = https://github.com/LightningCreations/lc-make.git
