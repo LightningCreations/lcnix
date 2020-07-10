@@ -1,5 +1,7 @@
 #![no_std]
 
+#![deny(warnings)]
+
 extern crate compiler_builtins;
 
 use core::fmt::Write;
@@ -20,7 +22,7 @@ extern"C"{
 #[cfg_attr(not(target="wc65c816"),link_section = ".text.init")]
 #[cfg_attr(target="wc65c816",link_section = ".text.kinit")]
 #[no_mangle]
-pub unsafe extern"C" fn start_kernel(mb_struct: *const c_void) -> !{
+pub unsafe extern"C" fn start_kernel(_mb_struct: *const c_void) -> !{
     init_syscall_handle();
     init_interrupts();
     let _ = writeln!(&mut PrintkFormatter,"Test");

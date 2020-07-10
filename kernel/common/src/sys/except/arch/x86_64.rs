@@ -11,6 +11,6 @@ pub enum Interrupt{
 }
 
 #[no_mangle]
-pub extern"C" fn handle_exception(code: Interrupt,err_code: MaybeUninit<usize>, uframe: *const ProcFrame) -> *const ProcFrame{
+pub extern"C" fn handle_exception(_code: Interrupt,_err_code: MaybeUninit<usize>, uframe: *const ProcFrame) -> *const ProcFrame{
     uframe
 }

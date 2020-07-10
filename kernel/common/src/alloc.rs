@@ -1,4 +1,5 @@
 
+#![allow(dead_code)]
 
 use core::ffi::c_void;
 use crate::sys::types::size_t;

@@ -37,7 +37,7 @@ unsafe impl<R: SyscallParam,A: SyscallParam,B: SyscallParam,C: SyscallParam,D: S
 
 unsafe impl Syscall for *const (){} // To allow null syscalls
 
-fn is_syscall<T: Syscall>(_: T){}
+
 
 macro_rules! static_slice {
     {$($(#[$attr:meta])* $vis:vis static $ident:ident: [$ty:ty] = $array:expr;)*} => {
@@ -104,8 +104,10 @@ macro_rules! syscall_decl{
         SyscallDecl(core:ptr::null())
     }};
     ($val:expr, $pcount:tt) => {{
+        fn _is_syscall<T: Syscall>(_: T){}
+
         fn __check(){
-            is_syscall(if true{$val}else{parcount!($pcount)})
+            _is_syscall(if true{$val}else{parcount!($pcount)})
         }
         SyscallDecl($val as *const ())
     }}

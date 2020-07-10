@@ -1,4 +1,4 @@
-use core::fmt::{Formatter, Write, Error,Result};
+use core::fmt::{Write, Error,Result};
 
 extern"C"{
     #[no_mangle]

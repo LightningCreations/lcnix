@@ -14,13 +14,13 @@ pub mod syscall {
     use core::ffi::c_void;
     use crate::ptr::UserPtr;
 
-    pub unsafe extern "C" fn sys_read(fd: Fd, ptr: UserPtr<c_void>, len: usize) -> isize {
+    pub unsafe extern "C" fn sys_read(_fd: Fd, _ptr: UserPtr<c_void>, _len: usize) -> isize {
         -1
     }
-    pub unsafe extern"C" fn sys_write(fd: Fd,ptr: UserPtr<c_void>,len: usize) -> isize{
+    pub unsafe extern"C" fn sys_write(_fd: Fd,_ptr: UserPtr<c_void>,_len: usize) -> isize{
         -1
     }
-    pub unsafe extern"C" fn sys_close(fd: Fd) -> isize{
+    pub unsafe extern"C" fn sys_close(_fd: Fd) -> isize{
         -1
     }
 
