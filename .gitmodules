@@ -21,7 +21,7 @@
 	url = https://github.com/LightningCreations/libc.git
 [submodule "lconf"]
 	path = lconf
-	url = https://.com/LightningCreations/lconf.git
+	url = https://github.com/LightningCreations/lconf.git
 [submodule "lc-binutils"]
 	path = lc-binutils
 	url = https://github.com/LightningCreations/lc-binutils.git
