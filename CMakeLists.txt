@@ -8,6 +8,8 @@ set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_CURRENT_SOURCE_DIR}/cmake-mo
 
 set(LCNIX_TARGET_ARCH ${CMAKE_SYSTEM_PROCESSOR} CACHE STRING "Sets the architecture to target with the lcnix build. This is an advanced operation. When cross-compiling you should use a Cross-compilation script that sets CMAKE_SYSTEM_PROCESSOR")
 
+message(STATUS "Building for ${LCNIX_TARGET_ARCH}")
+
 set(LCNIX_BUILD_TYPE "lcnix" CACHE STRING "Sets the type of build for lcnix (gnu, lcnix, bootstrap, or custom)")
 set_property(CACHE LCNIX_BUILD_TYPE PROPERTY STRINGS gnu lcnix bootstrap custom)
 

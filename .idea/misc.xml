@@ -3,6 +3,7 @@
   <component name="CMakeWorkspace" PROJECT_DIR="$PROJECT_DIR$" />
   <component name="CidrRootsConfiguration">
     <excludeRoots>
+      <file path="$PROJECT_DIR$/lc-coreutils/build-ninja" />
       <file path="$PROJECT_DIR$/lccc/codegen-llvm/llvm-project" />
     </excludeRoots>
   </component>
