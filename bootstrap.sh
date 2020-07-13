@@ -63,7 +63,10 @@ done
 if [ ${parallel_jobs} = "auto" -o ${parallel_jobs} = "yes" ]
 then
   parallel_jobs=$(($(getconf _NPROCESSORS_ONLN 2>/dev/null || getconf NPROCESSORS_ONLN  2>/dev/null || echo 1)*2))
-elif [ ${parallel_jobs}]
+elif [ ${parallel_jobs} = "no" ]
+then
+  parallel_jobs=1
+fi
 
 common_cmake_args=-DCMAKE_BUILD_TYPE=Release
 
