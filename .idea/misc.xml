@@ -5,6 +5,7 @@
     <excludeRoots>
       <file path="$PROJECT_DIR$/lc-coreutils/build-ninja" />
       <file path="$PROJECT_DIR$/lccc/codegen-llvm/llvm-project" />
+      <file path="$PROJECT_DIR$/test-sysroot" />
     </excludeRoots>
   </component>
   <component name="JavaScriptSettings">

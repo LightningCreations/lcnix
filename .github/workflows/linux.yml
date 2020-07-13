@@ -30,6 +30,7 @@ jobs:
           parallel: 8
           build-dir: ${{runner.workspace}}/build-clang
           run-test: true
+          configure-options: -DLCNIX_BUILD_TYPE=gnu
   build_gcc:
     runs-on: ubuntu-latest
     steps:
@@ -53,3 +54,4 @@ jobs:
           parallel: 8
           build-dir: ${{runner.workspace}}/build-gcc
           run-test: true
+          configure-options: -DLCNIX_BUILD_TYPE=gnu
