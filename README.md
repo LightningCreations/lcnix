@@ -2,6 +2,12 @@
 
 More coming soon!
 
+LCnix is heavily work in progress, and incomplete or incorrect parts may be enabled by default. 
+ It is not recommended to install any part of LCnix to your primary operating system.
+An exception is that many of the programs implemented by `lc-coreutils`
+ are considered to be complete and correct. 
+ You can usually safely build and install those programs in isolation (see building instructions for lc-coreutils in the associated subdirectory).
+ It is recommended to run the test suite provided by it before installing to a location which supersedes or replaces the system tools. 
 
 ## Licenses
 
